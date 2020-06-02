@@ -72,9 +72,9 @@ class Edit_Handout():
     def add_example(self):
         self.method_handout.addexmple("handout", "new_edit_handout_addother1", "new_edit_handout_addexample",
                                                 "new_edit_handout_addexample_subject",
-                                                "new_edit_handout_addexample_draft",
+                                                "new_edit_handout_addexample_draft1",
                                                 "new_edit_handout_addexample_draftlist",
-                                                "new_edit_handout_addexample_draftlist_name",
+                                                "new_edit_handout_addexample_draftlist_name1",
                                                 "new_edit_handout_addexample_subject_use1",
                                                 "new_edit_handout_addexample_subject_use2",
                                                 "new_edit_handout_addexample_subject_use3",

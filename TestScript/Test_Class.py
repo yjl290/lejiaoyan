@@ -29,7 +29,7 @@ class PageTest(unittest.TestCase):
         self.loginname = "yangjunlin@lexue.com"
         self.password = ".014789+"
 
-    # @unittest.skip("")
+    @unittest.skip("")
     def test_recordpaper_page(self):
         # 登录
         self.login = Login_Page.Login(self.chrome_driver)
@@ -64,10 +64,21 @@ class PageTest(unittest.TestCase):
         # self.edit_handout1.resemble_question()
         self.edit_handout1.open_question()
         logger.info('编辑真题试卷，试题下方图标-展开试题')
-        self.recordpaper.edit_omegaPaper_batch()
+        omegaedit_attribute_list =self.recordpaper.edit_omegaPaper_batch()
         logger.info('编辑真题试卷，')
-
-    # @unittest.skip("")
+        omega_attribute_list = self.recordpaper.get_omega_attribute()
+        # 验证真题试卷列表
+        try:
+            omegaedit_attribute_list1 = ['初一', '全国 / 统考', '2021', '期中（上学期）', '自动测试真题试卷名']
+            self.assertEqual(omegaedit_attribute_list1, omegaedit_attribute_list)
+        except  Exception as e:
+            print(e)
+        try:
+            omega_attribute_list1 = ['自动测试真题试卷名', '题目数量：5', '待标注：4', '年级：初一', '地区：全国/统考', '年份：2021','类别：期中（上学期）', '创建人：杨钧麟']
+            self.assertEqual(omega_attribute_list1, omega_attribute_list)
+        except  Exception as e:
+            print(e)
+    @unittest.skip("")
     def test_recordpaper_page1(self):
         # 登录
         self.login = Login_Page.Login(self.chrome_driver)
@@ -77,10 +88,11 @@ class PageTest(unittest.TestCase):
 
         # 录试卷-真题试卷-录入试题
         self.recordpaper = New_OmegaPaper.New_OmegaPaper(self.chrome_driver)
+        self.recordpaper.switch_omegaPaper()
         self.recordpaper.new_omegaPaper()
         self.recordpaper.new_omegaPaper_new()
 
-    # @unittest.skip("")
+    @unittest.skip("")
     def test_newquestion_page(self):
         # 登录
         self.login = Login_Page.Login(self.chrome_driver)

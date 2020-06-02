@@ -375,8 +375,9 @@ class Handout():
             self.search_handout.click_button("handout", "handout_file_file_yes")
         except Exception:
             print(1)
-        sleep(2)
+        sleep(1)
         self.search_handout.click_button("handout", "handout_file_file_file")
+        sleep(2)
         handout_list = Handout.get_file_handout_attribute(self)
         lehandout_list = Handout.get_file_lehandout_attribute(self)
         sleep(1)

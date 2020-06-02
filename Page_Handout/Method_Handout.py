@@ -35,9 +35,15 @@ class Method_Handout():
             self.question = Search_Question.Search_Question(self.driver)
             self.question.join_questionbasket()
             self.edit_handout.switch_page_close3_return2()
-            # sleep(1)
+            sleep(1)
+            self.edit_handout = Get_Element.Search_Page_Elements(self.driver)
             self.edit_handout.click_button(model, elm7)
-            # sleep(1)
+            # self.driver.find_element_by_css_selector(".ant-modal-close-x").click()
+            # try:
+            #     self.driver.find_element_by_xpath("/html/body/div[11]/div/div[2]/div/div[2]/button/span").click()
+            # except:
+            #     print("关闭成功")
+            sleep(1)
             self.edit_handout.click_button(model, elm3)
             sleep(1)
             self.edit_handout.click_button(model, elm4)
@@ -97,10 +103,10 @@ class Method_Handout():
     def replace_question(self):
         self.question_operation = Get_Element.Search_Page_Elements(self.driver)
         self.question_operation.click_button("handout", "new_edit_handout_question_replace")
-        # try:
-        #     self.question_operation.click_button("handout", "new_edit_handout_question_replace")
-        # except:
-        #     print("replace")
+        try:
+            self.question_operation.click_button("handout", "new_edit_handout_question_replace")
+        except:
+            print("replace")
         self.method_newquestion = Method_Question.Method_AddQuestion(self.driver)
         self.method_newquestion.new_omegaPaper_add("handout", "new_edit_handout_addexample_subject_use",
                                                    "new_edit_handout_addexample_subject_useyes",

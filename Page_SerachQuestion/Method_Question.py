@@ -28,7 +28,15 @@ class Method_AddQuestion():
             self.question = Search_Question.Search_Question(self.driver)
             self.question.join_questionbasket()
             self.add_question.switch_page_close3_return2()
+            sleep(2)
+            # self.driver.find_element_by_css_selector(
+            #     ".ant-modal-close-x").click()
+            self.add_question = Get_Element.Search_Page_Elements(self.driver)
             self.add_question.click_button(model, elm4)
+            try:
+                self.driver.find_element_by_xpath("/html/body/div[11]/div/div[2]/div/div[2]/button/span").click()
+            except:
+                print("关闭成功")
             self.add_question.click_button(model, elm5)
             sleep(1)
             self.add_question.click_button(model, elm1)

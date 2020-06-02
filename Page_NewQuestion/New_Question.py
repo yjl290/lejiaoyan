@@ -132,26 +132,26 @@ class New_Question():
         self.method_newquestion.currency_method_stemswitch("NewQuestion", "new_stem_editor", "new_stem_edit",
                                                            "new_stem_html",
                                                            "new_answering_position", "new_stem_yesedit",
-                                                           "new_completion_question", 'ueditor_10',
+                                                           "new_completion_question", 'ueditor_0',
                                                            '下列命题中，真命题是[[nn]]')
 
         # 答案
         self.method_newquestion.currency_method_answer("NewQuestion", "new_answer_editor", "new_answer_edit",
                                                        "new_option_html",
-                                                       "new_answer_yesedit", 'ueditor_11',
+                                                       "new_answer_yesedit", 'ueditor_1',
                                                        'a')
 
         # 解析
         self.method_newquestion.currency_method_answer("NewQuestion", "new_analysis_editor", "new_analysis_edit",
                                                        "new_analysis_html1",
-                                                       "new_analysis_yesedit", 'ueditor_12',
+                                                       "new_analysis_yesedit", 'ueditor_2',
                                                        '12364852')
 
         # 备注
         self.method_newquestion.currency_method_save("NewQuestion", "new_remarks_editor", "new_remarks_edit",
                                                      "new_remarks_html1",
                                                      "new_remarks_yesedit", "new_question_preview",
-                                                     "new_question_savenew", 'ueditor_13',
+                                                     "new_question_savenew", 'ueditor_3',
                                                      '12364852')
 
     # 录入-新建试题-填空题
@@ -229,23 +229,23 @@ class New_Question():
 
         self.method_newquestion.currency_method_answer("NewQuestion", "new_stem_editor1", "new_stem_edit1",
                                                        "new_stem_html",
-                                                       "new_stem_yesedit1", 'ueditor_5',
+                                                       "new_stem_yesedit1", 'ueditor_0',
                                                        '下列命题中，真命题是[[nn]]')
 
         self.method_newquestion.currency_method_answer("NewQuestion", "new_answer_editor1", "new_answer_edit1",
                                                        "new_analysis_html1",
-                                                       "new_answer_yesedit1", 'ueditor_6',
+                                                       "new_answer_yesedit1", 'ueditor_1',
                                                        'a')
 
         self.method_newquestion.currency_method_answer("NewQuestion", "new_analysis_editor1", "new_analysis_edit1",
                                                        "new_analysis_html",
-                                                       "new_analysis_yesedit1", 'ueditor_7',
+                                                       "new_analysis_yesedit1", 'ueditor_2',
                                                        '12364852')
 
         self.method_newquestion.currency_method_save("NewQuestion", "new_remarks_editor1", "new_remarks_edit1",
                                                      "new_remarks_html",
                                                      "new_remarks_yesedit1", "new_question_preview",
-                                                     "new_question_savenew", 'ueditor_8',
+                                                     "new_question_savenew", 'ueditor_3',
                                                      '12364852')
 
     # 录入-新建试题-解答题多小题
@@ -262,80 +262,80 @@ class New_Question():
         sleep(1)
 
         self.method_newquestion.currency_method("NewQuestion", "new_stem_editor2", "new_stem_edit2",
-                                                "new_stem_html", "new_stem_yesedit2", 'ueditor_9', '下列命题中，真命题是[[nn]]')
+                                                "new_stem_html", "new_stem_yesedit2", 'ueditor_0', '下列命题中，真命题是[[nn]]')
 
         # 1小题题干
         self.method_newquestion.currency_method("NewQuestion", "new_stem_editor1small", "new_stem_edit1small",
-                                                "new_stem_html", "new_stem_yesedit1small", 'ueditor_5',
+                                                "new_stem_html", "new_stem_yesedit1small", 'ueditor_1',
                                                 '下列命题中，真命题是[[nn]]')
         # # 答案
         self.method_newquestion.currency_method("NewQuestion", "new_answer_editor1small", "new_answer_edit1small",
-                                                "new_option_html", "new_answer_yesedit1small", 'ueditor_6', 'a')
+                                                "new_option_html", "new_answer_yesedit1small", 'ueditor_2', 'a')
         # # 解析
         self.method_newquestion.currency_method("NewQuestion", "new_analysis_editor1small", "new_analysis_edit1small",
-                                                "new_analysis_html", "new_analysis_yesedit1small", 'ueditor_7',
+                                                "new_analysis_html", "new_analysis_yesedit1small", 'ueditor_3',
                                                 '12364852')
         # # 备注
         self.method_newquestion.currency_method("NewQuestion", "new_remarks_editor1small", "new_remarks_edit1small",
-                                                "new_remarks_html", "new_remarks_yesedit1small", 'ueditor_8',
+                                                "new_remarks_html", "new_remarks_yesedit1small", 'ueditor_4',
                                                 '12364852')
 
         # 2小题题干
         self.method_newquestion.currency_method("NewQuestion", "new_stem_editor1small2", "new_stem_edit1small2",
                                                 "new_stem_html",
-                                                "new_stem_edit1small2", 'ueditor_10', '下列命题中，真命题是[[nn]]')
+                                                "new_stem_edit1small2", 'ueditor_5', '下列命题中，真命题是[[nn]]')
         self.method_newquestion.currency_method("NewQuestion", "new_answer_editor1small2", "new_answer_edit1small2",
                                                 "new_option_html",
-                                                "new_answer_yesedit1small2", 'ueditor_11', 'a')
+                                                "new_answer_yesedit1small2", 'ueditor_6', 'a')
         self.method_newquestion.currency_method("NewQuestion", "new_analysis_editor1small2", "new_analysis_edit1small2",
                                                 "new_analysis_html",
-                                                "new_analysis_yesedit1small2", 'ueditor_12', '12364852')
+                                                "new_analysis_yesedit1small2", 'ueditor_7', '12364852')
         self.method_newquestion.currency_method("NewQuestion", "new_remarks_editor1small2", "new_remarks_edit1small2",
                                                 "new_remarks_html",
-                                                "new_remarks_yesedit1small2", 'ueditor_13', '12364852')
+                                                "new_remarks_yesedit1small2", 'ueditor_8', '12364852')
 
         # 3小题题干
         self.method_newquestion.currency_method("NewQuestion", "new_stem_editor1small3", "new_stem_edit1small3",
                                                 "new_stem_html",
-                                                "new_stem_yesedit1small3", 'ueditor_14', '下列命题中，真命题是[[nn]]')
+                                                "new_stem_yesedit1small3", 'ueditor_9', '下列命题中，真命题是[[nn]]')
         self.method_newquestion.currency_method("NewQuestion", "new_answer_editor1small3", "new_answer_edit1small3",
                                                 "new_option_html",
-                                                "new_answer_yesedit1small3", 'ueditor_15', 'a')
+                                                "new_answer_yesedit1small3", 'ueditor_10', 'a')
         self.method_newquestion.currency_method("NewQuestion", "new_analysis_editor1small3", "new_analysis_edit1small3",
                                                 "new_analysis_html",
-                                                "new_analysis_yesedit1small3", 'ueditor_16', '12364852')
+                                                "new_analysis_yesedit1small3", 'ueditor_11', '12364852')
         self.method_newquestion.currency_method("NewQuestion", "new_remarks_editor1small3", "new_remarks_edit1small3",
                                                 "new_remarks_html",
-                                                "new_remarks_yesedit1small3", 'ueditor_17', '12364852')
+                                                "new_remarks_yesedit1small3", 'ueditor_12', '12364852')
 
         # 4小题题干
         self.method_newquestion.currency_method("NewQuestion", "new_stem_editor1small4", "new_stem_edit1small4",
                                                 "new_stem_html",
-                                                "new_stem_yesedit1small4", 'ueditor_18', '下列命题中，真命题是[[nn]]')
+                                                "new_stem_yesedit1small4", 'ueditor_13', '下列命题中，真命题是[[nn]]')
         self.method_newquestion.currency_method("NewQuestion", "new_answer_editor1small4", "new_answer_edit1small4",
                                                 "new_option_html",
-                                                "new_answer_yesedit1small4", 'ueditor_19', 'a')
+                                                "new_answer_yesedit1small4", 'ueditor_14', 'a')
         self.method_newquestion.currency_method("NewQuestion", "new_analysis_editor1small4", "new_analysis_edit1small4",
                                                 "new_analysis_html",
-                                                "new_analysis_yesedit1small4", 'ueditor_20', '12364852')
+                                                "new_analysis_yesedit1small4", 'ueditor_15', '12364852')
         self.method_newquestion.currency_method("NewQuestion", "new_remarks_editor1small4", "new_remarks_edit1small4",
                                                 "new_remarks_html",
-                                                "new_remarks_yesedit1small4", 'ueditor_21', '12364852')
+                                                "new_remarks_yesedit1small4", 'ueditor_16', '12364852')
 
         # 5小题题干
         self.method_newquestion.currency_method("NewQuestion", "new_stem_editor1small5", "new_stem_edit1small5",
                                                 "new_stem_html",
-                                                "new_stem_yesedit1small5", 'ueditor_22', '下列命题中，真命题是[[nn]]')
+                                                "new_stem_yesedit1small5", 'ueditor_17', '下列命题中，真命题是[[nn]]')
         self.method_newquestion.currency_method("NewQuestion", "new_answer_editor1small5", "new_answer_edit1small5",
                                                 "new_option_html",
-                                                "new_answer_yesedit1small5", 'ueditor_23', 'a')
+                                                "new_answer_yesedit1small5", 'ueditor_18', 'a')
         self.method_newquestion.currency_method("NewQuestion", "new_analysis_editor1small5", "new_analysis_edit1small5",
                                                 "new_analysis_html",
-                                                "new_analysis_yesedit1small5", 'ueditor_24', '12364852')
+                                                "new_analysis_yesedit1small5", 'ueditor_19', '12364852')
         self.method_newquestion.currency_method_save("NewQuestion", "new_remarks_editor1small5",
                                                      "new_remarks_edit1small5", "new_remarks_html",
                                                      "new_remarks_yesedit1small5", "new_question_preview",
-                                                     "new_question_save", 'ueditor_25', '12364852')
+                                                     "new_question_save", 'ueditor_20', '12364852')
 
     # 录入-新建试题-解答题
     def answer_question(self):

@@ -1,3 +1,5 @@
+from selenium.webdriver.common.by import By
+
 from Page_RecordPaper import OmegaMethod
 from Util import Get_Element
 from Util import MongoDB_Data
@@ -24,9 +26,9 @@ class New_OmegaPaper():
 
     def new_omegaPaper(self):
         self.OmegaPaper_page = Get_Element.Search_Page_Elements(self.driver)
-        self.OmegaPaper_page.move_mouse("Navigation", "move_mouse_input")
-        sleep(1)
-        self.OmegaPaper_page.click_button("Navigation", "button_resordpaper")
+        # self.OmegaPaper_page.move_mouse("Navigation", "move_mouse_input")
+        # sleep(1)
+        # self.OmegaPaper_page.click_button("Navigation", "button_resordpaper")
         sleep(1)
         self.OmegaPaper_page.move_mouse("RecordPaper", "recordpaper_new")
         self.OmegaPaper_page.click_button("RecordPaper", "new_omegapaper")
@@ -90,6 +92,7 @@ class New_OmegaPaper():
         # self.omegaPaper_page_new.click_button("RecordPaper", "edit_omegapaper_new")
         # self.newquestion.choice_question()
         New_OmegaPaper.similar(self)
+        sleep(1)
         self.omegaPaper_page_new.click_button("RecordPaper", "omegapaper_back")
         # self.omegaPaper_page_new.switch_page_close()
 
@@ -103,6 +106,28 @@ class New_OmegaPaper():
         sleep(1)
         self.omegaPaper_page_new.click_button("RecordPaper", "new_omegapaper_batchsave")
         sleep(3)
+        self.list = New_OmegaPaper.get_omegaedit_attribute(self)
+
+        # self.omegaPaper_page_new.click_button("RecordPaper", "omegapaper_editback")
+        self.driver.find_element(By.CSS_SELECTOR, "div > .anticon-left > svg").click()
+        return self.list
+
+
+
+    # 获取讲义名称
+    def get_omega_attribute(self):
+        self.omegaPaper_page_new = Get_Element.Search_Page_Elements(self.driver)
+        self.omegaPaper_page_new.move_between()
+        self.name = self.omegaPaper_page_new.get_page_element_name("RecordPaper", "omegapaper_name")
+        self.count1 = self.omegaPaper_page_new.get_page_element_name("RecordPaper", "omegapaper_listcount1")
+        self.count2 = self.omegaPaper_page_new.get_page_element_name("RecordPaper", "omegapaper_listcount2")
+        self.classes = self.omegaPaper_page_new.get_page_element_name("RecordPaper", "omegapaper_listclass")
+        self.region = self.omegaPaper_page_new.get_page_element_name("RecordPaper", "omegapaper_listregion")
+        self.year = self.omegaPaper_page_new.get_page_element_name("RecordPaper", "omegapaper_listyear")
+        self.type = self.omegaPaper_page_new.get_page_element_name("RecordPaper", "omegapaper_listtype")
+        self.createman = self.omegaPaper_page_new.get_page_element_name("RecordPaper", "omegapaper_listman")
+        self.list = [self.name, self.count1, '待标注：4', self.classes, self.region, self.year, self.type, self.createman]
+        return self.list
 
     def similar(self):
         self.omegaPaper_page_new = Get_Element.Search_Page_Elements(self.driver)
@@ -114,3 +139,18 @@ class New_OmegaPaper():
         sleep(1)
         self.omegaPaper_page_new.click_button("RecordPaper", "omegapaper_similar_use1")
         sleep(1)
+
+    def get_omegaedit_attribute(self):
+        self.omegaPaper_page_new.click_button("RecordPaper", "omegapaper_editopen")
+        self.omegaPaper_page_new.click_button("RecordPaper", "omegapaper_editinformation")
+        # sleep(30)
+        self.classes = self.omegaPaper_page_new.get_page_element_name("RecordPaper", "omegapaper_editinformation_class")
+        self.year = self.omegaPaper_page_new.get_page_element_name("RecordPaper", "omegapaper_editinformation_year")
+        self.type = self.omegaPaper_page_new.get_page_element_name("RecordPaper", "omegapaper_editinformation_type")
+        self.region = self.omegaPaper_page_new.get_page_element_name("RecordPaper", "omegapaper_editinformation_region")
+        # self.remarks = self.omegaPaper_page_new.get_page_element_name("RecordPaper", "omegapaper_editinformation_remarks")
+        self.remarks = self.omegaPaper_page_new.get_page_element("RecordPaper", "omegapaper_editinformation_remarks").get_attribute(
+            'value')
+        self.list = [self.classes, self.region, self.year, self.type,self.remarks]
+        return self.list
+
