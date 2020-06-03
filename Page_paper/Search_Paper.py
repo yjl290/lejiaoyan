@@ -123,7 +123,7 @@ class Search_paper():
             self.search_paper.click_button("paper", "edit_paper_use")
             sleep(1)
             self.search_paper.click_button("paper", "edit_paper_useyes")
-        # sleep(2)
+            sleep(2)
 
 
     # 创建测验

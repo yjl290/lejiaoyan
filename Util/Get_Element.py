@@ -53,6 +53,12 @@ class Search_Page_Elements():
         except:
             button.get_page_element(section_name, option_name).click()
 
+    # 点击
+    def doubleclick_button(self, section_name, option_name):
+        button = Search_Page_Elements(self.driver)
+        element = button.get_page_element(section_name, option_name)
+        self.actions.double_click(element).perform()
+
     #单选框状态
     def radio_state(self, section_name, option_name):
         page_string = Search_Page_Elements(self.driver)

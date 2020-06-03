@@ -11,7 +11,7 @@ from Page_RecordPaper import New_OmegaPaper
 from Page_SerachQuestion import Search_Question
 from Page_Handout import Method_Handout
 from Page_Handout import Look_Handout
-from Page_paper import Search_Paper
+from Page_paper import Search_Paper, Edit_Paper
 from Util import MongoDB_Data
 from selenium import webdriver
 import unittest
@@ -200,8 +200,10 @@ class PageTest(unittest.TestCase):
         # 我的试卷
         self.paper = Search_Paper.Search_paper(self.chrome_driver)
         self.paper.screen_condition()
-        # self.paper.add_paper()
+        self.paper.add_paper()
         self.paper.edit_paper()
+        self.edit_paper = Edit_Paper.Edit_Paper(self.chrome_driver)
+        self.edit_paper.menu()
 
 
     def tearDown(self):
