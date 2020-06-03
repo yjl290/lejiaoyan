@@ -1,6 +1,7 @@
+import traceback
 from time import sleep
 
-from selenium import webdriver
+
 
 from Page_LeHandout import Method_LeHandout
 from Page_Login import Login_Page
@@ -10,7 +11,9 @@ from Page_RecordPaper import New_OmegaPaper
 from Page_SerachQuestion import Search_Question
 from Page_Handout import Method_Handout
 from Page_Handout import Look_Handout
+from Page_paper import Search_Paper
 from Util import MongoDB_Data
+from selenium import webdriver
 import unittest
 
 from Util.GetLog import Logger
@@ -78,6 +81,7 @@ class PageTest(unittest.TestCase):
             self.assertEqual(omega_attribute_list1, omega_attribute_list)
         except  Exception as e:
             print(e)
+
     @unittest.skip("")
     def test_recordpaper_page1(self):
         # 登录
@@ -115,7 +119,7 @@ class PageTest(unittest.TestCase):
         self.newquestion.answer_questionlong()
 
 
-    # @unittest.skip("")
+    @unittest.skip("")
     def test_myhandout_page(self):
         # 登录
         self.login = Login_Page.Login(self.chrome_driver)
@@ -151,6 +155,7 @@ class PageTest(unittest.TestCase):
             handout_attribute_list1 = ['自动测试讲义名', '年级：初一', '年份：2021', '类型：短期班', '学季：春季班', '所属分校：南京', '创建人：杨钧麟']
             self.assertEqual(handout_attribute_list1, handout_attribute_list)
         except  Exception as e:
+            logger.critical(traceback.format_exc())
             print(e)
         # 验证归档讲义列表
         try:
@@ -158,6 +163,7 @@ class PageTest(unittest.TestCase):
                              'lehandout_list': ['自动测试专用讲义集', '包含讲义数量：1', '创建人：杨钧麟', '年级：初二', '年份：2020', '类型：短期班', '学季：春季班']}
             self.assertEqual(handour_dict1, handour_dict)
         except  Exception as e:
+            logger.critical(traceback.format_exc())
             print(e)
         # 验证讲义排版
         try:
@@ -169,6 +175,7 @@ class PageTest(unittest.TestCase):
                                      'background2': 'background-image: url("/img/2f/67/2f67faa3ffe5394f64c6c89d2dbdbaee.png"); background-size: 100% 100%;'}
             self.assertEqual(dict_student_handout1, dict_student_handout)
         except  Exception as e:
+            logger.critical(traceback.format_exc())
             print(e)
         # 验证查看讲义模块树点击状态
         try:
@@ -181,7 +188,21 @@ class PageTest(unittest.TestCase):
                                'class_value7': "ant-tree-treenode-switcher-close ant-tree-treenode-selected"}
             self.assertEqual(dict_lehandout1, dict_lehandout2)
         except  Exception as e:
+            logger.critical(traceback.format_exc())
             print(e)
+
+    # @unittest.skip("")
+    def test_mypaper_page(self):
+        # 登录
+        self.login = Login_Page.Login(self.chrome_driver)
+        self.login.test_search(self.loginname, self.password)
+
+        # 我的试卷
+        self.paper = Search_Paper.Search_paper(self.chrome_driver)
+        self.paper.screen_condition()
+        # self.paper.add_paper()
+        self.paper.edit_paper()
+
 
     def tearDown(self):
         self.chrome_driver.quit()

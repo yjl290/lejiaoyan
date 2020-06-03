@@ -175,7 +175,7 @@ class Handout():
         # edit_handout.add_points()
         # edit_handout.add_text()
 
-    # 获取讲义名称
+    # 获取讲义属性
     def get_handout_attribute(self):
         self.handoutname = self.search_handout.get_page_element_name("handout", "new_handout_name")
         self.classes = self.search_handout.get_page_element_name("handout", "new_handout_classes")

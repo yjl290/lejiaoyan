@@ -145,11 +145,14 @@ class Search_Page_Elements():
         self.driver.close()
         self.driver.switch_to.window(all_handles[0])  # 切换到新页面
 
+
     # 切到第2页，关闭第3页
     def switch_page_close3_return2(self):
         all_handles = self.driver.window_handles  # 获取全部页面句柄
+        print('当前页面3' + self.driver.current_window_handle)
         self.driver.close()
         self.driver.switch_to.window(all_handles[1])  # 切换到新页面
+        print('当前页面2' + self.driver.current_window_handle)
 
     # 切换页面，到第三页
     def switch_page_three(self):
