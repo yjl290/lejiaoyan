@@ -33,7 +33,7 @@ class ParseConfigFile:
             # self.cut = Get_Element.Search_Page_Elements(self.driver)
             # self.cut.cut("失败截图")
             logger.critical(traceback.format_exc())
-            raise e
+            # raise e
 
 
 

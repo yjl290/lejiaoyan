@@ -21,7 +21,7 @@ class Search_Page_Elements():
 
     #获取元素
     def get_page_element(self, section_name, option_name):
-        self.page_element = self.get_element.get_element_location(section_name, option_name, 10)
+        self.page_element = self.get_element.get_element_location(section_name, option_name, 5)
         return self.page_element
 
     #script点击

@@ -32,10 +32,11 @@ class Method_AddQuestion():
             # self.driver.find_element_by_css_selector(
             #     ".ant-modal-close-x").click()
             self.add_question = Get_Element.Search_Page_Elements(self.driver)
-            self.add_question.click_button(model, elm4)
+
             try:
-                self.driver.find_element_by_xpath("/html/body/div[11]/div/div[2]/div/div[2]/button/span").click()
+                self.add_question.click_button(model, elm4)
             except:
+                self.add_question.click_button(model, "new_edit_handout_addexample_subject_popupclose2")
                 print("关闭成功")
             self.add_question.click_button(model, elm5)
             sleep(1)

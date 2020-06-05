@@ -1,7 +1,8 @@
 import traceback
 from time import sleep
 
-
+import sys
+sys.path.append("..")
 
 from Page_LeHandout import Method_LeHandout
 from Page_Login import Login_Page
@@ -32,7 +33,7 @@ class PageTest(unittest.TestCase):
         self.loginname = "yangjunlin@lexue.com"
         self.password = ".014789+"
 
-    @unittest.skip("")
+    # @unittest.skip("")
     def test_recordpaper_page(self):
         # 登录
         self.login = Login_Page.Login(self.chrome_driver)
@@ -60,7 +61,7 @@ class PageTest(unittest.TestCase):
         logger.info('编辑真题试卷，试题下方图标-删除试题')
         self.edit_handout1.adaptation_question()
         logger.info('编辑真题试卷，试题下方图标-改编试题')
-        self.edit_handout1.correction_question()
+        # self.edit_handout1.correction_question()
         logger.info('编辑真题试卷，试题下方图标-纠错试题')
         self.edit_handout1.details_question()
         logger.info('编辑真题试卷，试题下方图标-试题详情')
@@ -81,8 +82,9 @@ class PageTest(unittest.TestCase):
             self.assertEqual(omega_attribute_list1, omega_attribute_list)
         except  Exception as e:
             print(e)
+        logger.info('真题试卷执行成功')
 
-    @unittest.skip("")
+    # @unittest.skip("")
     def test_recordpaper_page1(self):
         # 登录
         self.login = Login_Page.Login(self.chrome_driver)
@@ -95,8 +97,9 @@ class PageTest(unittest.TestCase):
         self.recordpaper.switch_omegaPaper()
         self.recordpaper.new_omegaPaper()
         self.recordpaper.new_omegaPaper_new()
+        logger.info('真题试卷执行成功')
 
-    @unittest.skip("")
+    # @unittest.skip("")
     def test_newquestion_page(self):
         # 登录
         self.login = Login_Page.Login(self.chrome_driver)
@@ -117,9 +120,10 @@ class PageTest(unittest.TestCase):
         self.newquestion.completion_question_next()
         self.newquestion.answer_question_next()
         self.newquestion.answer_questionlong()
+        logger.info('新建试题执行成功')
 
 
-    @unittest.skip("")
+    # @unittest.skip("")
     def test_myhandout_page(self):
         # 登录
         self.login = Login_Page.Login(self.chrome_driver)
@@ -190,6 +194,7 @@ class PageTest(unittest.TestCase):
         except  Exception as e:
             logger.critical(traceback.format_exc())
             print(e)
+        logger.info('讲义执行成功')
 
     # @unittest.skip("")
     def test_mypaper_page(self):
@@ -204,6 +209,7 @@ class PageTest(unittest.TestCase):
         self.paper.edit_paper()
         self.edit_paper = Edit_Paper.Edit_Paper(self.chrome_driver)
         self.edit_paper.menu()
+        logger.info('试卷执行成功')
 
 
     def tearDown(self):
